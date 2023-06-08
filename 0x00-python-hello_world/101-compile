@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import os
+
+pyfile = os.environ.get('PYFILE')
+pycfile = pyfile + 'c'
+
+print(f"Compiling {pyfile} ...")
+with open(pyfile, 'rb') as f:
+    code = compile(f.read(), pyfile, 'exec')
+    with open(pycfile, 'wb') as pyc:
+        pyc.write(code.co_code)
+		
