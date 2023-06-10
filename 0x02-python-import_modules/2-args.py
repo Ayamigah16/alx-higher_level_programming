@@ -14,4 +14,4 @@ if __name__ == "__main__":
         print({"{} arguments:".format(count)})
 
     for index in range(count):
-        print("{}: {}".format(index + 1, sys.argv(index + 1)))
+        print("{}: {}".format(index + 1, sys.argv[index + 1]))
