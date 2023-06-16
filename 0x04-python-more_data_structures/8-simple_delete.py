@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
-def update_dictionary(a_dictionary, key, value):
-    # Update the value of an existing key
+def simple_delete(a_dictionary, key=""):
+    # Check if the key exists in the dictionary
     if key in a_dictionary:
-        a_dictionary[key] = value
-    # Add a new key/value pair
-    else:
-        a_dictionary[key] = value
+        # Delete the key-value pair from the dictionary
+        del a_dictionary[key]
 
     # Return the updated dictionary
     return a_dictionary
