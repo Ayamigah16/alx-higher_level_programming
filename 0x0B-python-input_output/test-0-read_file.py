@@ -12,7 +12,8 @@ from read_file import read_file
 class ReadFileTestCase(unittest.TestCase):
     def test_read_file(self):
         expected_output = "We offer a truly innovative approach to education:\n" \
-                          "focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.\n" \
+                          "focus on building reliable applications and scalable systems," \
+                          " take on real-world challenges, collaborate with your peers.\n" \
                           "\n" \
                           "A school every software engineer would have dreamt of!\n"
 
