@@ -1,7 +1,8 @@
-import json
+#!/usr/bin/python3
 """
 Contains the "to_json_string" fundtion
 """
+import json
 
 
 def to_json_string(my_obj):
@@ -15,6 +16,7 @@ def to_json_string(my_obj):
         str: The JSON representation of the object.
     """
     return json.dumps(my_obj)
+
 
 if __name__ == '__main__':
     my_list = [1, 2, 3]
