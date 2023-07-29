@@ -3,6 +3,7 @@
 Contains the Student Class
 """
 
+
 class Student:
     """
     Class that defines a student.
@@ -10,7 +11,8 @@ class Student:
 
     def __init__(self, first_name, last_name, age):
         """
-        Initializes a student with the given first name, last name, and age.
+        Initializes a student with the given first name,
+        last name, and age.
 
         Args:
             first_name (str): The first name of the student.
@@ -23,25 +25,32 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        Retrieves a dictionary representation of the Student instance.
+        Retrieves a dictionary representation of the Student
+        instance.
 
         Args:
-            attrs (list): List of attribute names to be retrieved (default: None).
+            attrs (list): List of attribute names to be retrieved
+        (default: None).
 
         Returns:
-            dict: A dictionary representation of the Student instance.
+            dict: A dictionary representation of the Student
+        instance.
         """
         if attrs is None:
             return self.__dict__
         else:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            return {attr: getattr(
+                self,
+                attr) for attr in attrs if hasattr(self, attr)}
 
     def reload_from_json(self, json):
         """
-        Replaces all attributes of the Student instance with the values from the provided JSON dictionary.
+        Replaces all attributes of the Student instance with the
+        values from the provided JSON dictionary.
 
         Args:
-            json (dict): A dictionary representing the attributes of the Student instance.
+            json (dict): A dictionary representing the attributes
+        of the Student instance.
         """
         for attr, value in json.items():
             setattr(self, attr, value)
@@ -59,7 +68,8 @@ if __name__ == '__main__':
     print(student_1)
     print(type(student_1))
     print(type(j_student_1))
-    print("{} {} {}".format(student_1.first_name, student_1.last_name, student_1.age))
+    print("{} {} {}".format(student_1.first_name,
+                            student_1.last_name, student_1.age))
 
     # Save to JSON file
     with open(path, 'w') as f:
@@ -77,4 +87,5 @@ if __name__ == '__main__':
     print("Fake student:")
     print(new_student_1)
     print(type(new_student_1))
-    print("{} {} {}".format(new_student_1.first_name, new_student_1.last_name, new_student_1.age))
+    print("{} {} {}".format(new_student_1.first_name,
+                            new_student_1.last_name, new_student_1.age))
