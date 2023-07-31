@@ -123,10 +123,10 @@ class Base:
             for obj in list_objs:
                 f.write(obj.to_csv_row() + "\n")
 
-
     @classmethod
     def load_from_file_csv(cls):
-        """Loads objects from a CSV file and returns a list of instances of the class.
+        """Loads objects from a CSV file and returns a
+        list of instances of the class.
 
         Returns:
         list: List of instances loaded from the CSV file.
