@@ -127,5 +127,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s1.x, new_s1.x)
         self.assertEqual(self.s1.y, new_s1.y)
 
+
 if __name__ == "__main__":
     unittest.main()

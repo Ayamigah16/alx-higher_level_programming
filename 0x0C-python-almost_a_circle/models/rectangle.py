@@ -194,7 +194,8 @@ class Rectangle(Base):
         }
 
     def to_csv_row(self):
-        return "{},{},{},{},{}".format(self.id, self.width, self.height, self.x, self.y)
+        return "{},{},{},{},{}".format(
+            self.id, self.width, self.height, self.x, self.y)
 
     @classmethod
     def from_csv_row(cls, row):

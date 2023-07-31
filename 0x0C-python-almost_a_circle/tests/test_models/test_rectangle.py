@@ -47,22 +47,26 @@ class TestRectangle(unittest.TestCase):
             Rectangle(10, -5)
 
     def test_non_integer_x(self):
-        """Test creating a Rectangle instance with a non-integer x-coordinate."""
+        """Test creating a Rectangle instance with a
+        non-integer x-coordinate."""
         with self.assertRaises(TypeError):
             Rectangle(10, 5, 'invalid_x', 3)
 
     def test_negative_x(self):
-        """Test creating a Rectangle instance with a negative x-coordinate."""
+        """Test creating a Rectangle instance with a
+        negative x-coordinate."""
         with self.assertRaises(ValueError):
             Rectangle(10, 5, -2, 3)
 
     def test_non_integer_y(self):
-        """Test creating a Rectangle instance with a non-integer y-coordinate."""
+        """Test creating a Rectangle instance with a
+        non-integer y-coordinate."""
         with self.assertRaises(TypeError):
             Rectangle(10, 5, 2, 'invalid_y')
 
     def test_negative_y(self):
-        """Test creating a Rectangle instance with a negative y-coordinate."""
+        """Test creating a Rectangle instance with a
+        negative y-coordinate."""
         with self.assertRaises(ValueError):
             Rectangle(10, 5, 2, -3)
 
@@ -131,7 +135,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 1/3 - 4/2")
 
     def test_update_with_both_args_and_kwargs(self):
-        """Test the update method with both no-keyword and key-worded arguments."""
+        """Test the update method with both no-keyword and
+        key-worded arguments."""
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
@@ -194,6 +199,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r1.height, new_r1.height)
         self.assertEqual(self.r1.x, new_r1.x)
         self.assertEqual(self.r1.y, new_r1.y)
+
 
 if __name__ == '__main__':
     unittest.main()

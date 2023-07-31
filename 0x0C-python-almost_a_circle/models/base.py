@@ -28,13 +28,15 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON string representation of list_dictionaries.
+        """Return the JSON string representation
+        of list_dictionaries.
 
         Args:
             list_dictionaries (list): A list of dictionaries.
 
         Returns:
-            str: The JSON string representation of list_dictionaries.
+            str: The JSON string representation
+        of list_dictionaries.
         """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
@@ -45,7 +47,8 @@ class Base:
         """Return the list represented by json_string.
 
         Args:
-            json_string (str): A JSON string representing a list of dictionaries.
+            json_string (str): A JSON string
+        representing a list of dictionaries.
 
         Returns:
             list: The list represented by json_string.
@@ -59,7 +62,8 @@ class Base:
         """Return an instance with all attributes already set.
 
         Args:
-            **dictionary (dict): The dictionary containing the attributes.
+            **dictionary (dict): The dictionary containing
+        the attributes.
 
         Returns:
             Base: An instance of the class with attributes set.
@@ -108,7 +112,8 @@ class Base:
         Returns:
             list: The CSV row representing the instance attributes.
         """
-        raise NotImplementedError("to_csv_row method must be implemented in subclasses")
+        raise NotImplementedError(
+            "to_csv_row method must be implemented in subclasses")
 
     @classmethod
     def from_csv_row(cls, row):
@@ -120,7 +125,8 @@ class Base:
         Returns:
             dict: A dictionary containing the instance attributes.
         """
-        raise NotImplementedError("from_csv_row method must be implemented in subclasses")
+        raise NotImplementedError(
+            "from_csv_row method must be implemented in subclasses")
 
     @staticmethod
     def draw(list_rectangles, list_squares):
