@@ -106,6 +106,38 @@ class Base:
         except FileNotFoundError:
             return []
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves a list of objects to a CSV file.
+
+        Args:
+        list_objs (list): List of instances to be saved to the CSV file.
+
+        Returns:
+        None
+        """
+        if list_objs is None:
+            list_objs = []
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode='w', encoding='utf-8') as f:
+            for obj in list_objs:
+                f.write(obj.to_csv_row() + "\n")
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads objects from a CSV file and returns a list of instances of the class.
+
+        Returns:
+        list: List of instances loaded from the CSV file.
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode='r', encoding='utf-8') as f:
+                return [cls.from_csv_row(row.strip()) for row in f]
+        except FileNotFoundError:
+            return []
+
     def to_csv_row(self):
         """Convert instance attributes to a CSV row.
 
