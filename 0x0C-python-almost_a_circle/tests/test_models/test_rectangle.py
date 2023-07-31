@@ -77,6 +77,26 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_display(self):
+        """Test the display method of Rectangle."""
+        r1 = Rectangle(2, 3, 2, 2)
+        r1_expected_output = "\n\n  ##\n  ##\n  ##\n"
+        self.assertOutput(r1.display, r1_expected_output)
+
+        r2 = Rectangle(3, 2, 1, 0)
+        r2_expected_output = " ###\n ###\n"
+        self.assertOutput(r2.display, r2_expected_output)
+
+    # Helper method to capture stdout output for testing
+    def assertOutput(self, func, expected_output):
+        from io import StringIO
+        import sys
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        func()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
 
 if __name__ == '__main__':
     unittest.main()
