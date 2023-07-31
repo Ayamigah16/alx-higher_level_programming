@@ -65,5 +65,31 @@ class TestSquare(unittest.TestCase):
             s1.size = 0
         self.assertEqual(str(context.exception), "width must be > 0")
 
+    def test_update_method(self):
+        """Test the update method of the Square class."""
+        s1 = Square(4, 2, 3, 5)
+        s1.update(10)
+        self.assertEqual(str(s1), "[Square] (10) 2/3 - 4")
+
+        s1.update(10, 5)
+        self.assertEqual(str(s1), "[Square] (10) 2/3 - 5")
+
+        s1.update(10, 5, 1)
+        self.assertEqual(str(s1), "[Square] (10) 1/3 - 5")
+
+        s1.update(10, 5, 1, 7)
+        self.assertEqual(str(s1), "[Square] (10) 1/7 - 5")
+
+        s1.update(y=10)
+        self.assertEqual(str(s1), "[Square] (10) 1/10 - 5")
+
+    def test_to_dictionary_method(self):
+        """Test the to_dictionary method of the Square class."""
+        s1 = Square(4, 2, 3, 5)
+        s1_dict = s1.to_dictionary()
+        expected_dict = {'id': 5, 'size': 4, 'x': 2, 'y': 3}
+        self.assertEqual(s1_dict, expected_dict)
+
+
 if __name__ == "__main__":
     unittest.main()
