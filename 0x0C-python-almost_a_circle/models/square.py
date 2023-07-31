@@ -87,3 +87,11 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Return the dictionary representation of a square."""
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+
+    def to_csv_row(self):
+        return "{},{},{},{}".format(self.id, self.width, self.x, self.y)
+
+    @classmethod
+    def from_csv_row(cls, row):
+        id, size, x, y = map(int, row.split(","))
+        return cls(size, x, y, id)

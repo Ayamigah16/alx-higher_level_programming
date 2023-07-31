@@ -192,3 +192,11 @@ class Rectangle(Base):
             "x": self.x,
             "y": self.y
         }
+
+    def to_csv_row(self):
+        return "{},{},{},{},{}".format(self.id, self.width, self.height, self.x, self.y)
+
+    @classmethod
+    def from_csv_row(cls, row):
+        id, width, height, x, y = map(int, row.split(","))
+        return cls(width, height, x, y, id)

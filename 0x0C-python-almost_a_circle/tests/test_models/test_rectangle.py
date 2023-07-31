@@ -156,6 +156,44 @@ class TestRectangle(unittest.TestCase):
         r2.update(**r1_dict)
         self.assertEqual(str(r2), "[Rectangle] (1) 1/9 - 10")
 
+    def setUp(self):
+        """ Create an instance of Rectangle with id=1,
+        width=10, height=5, x=0, and y=0"""
+        self.r1 = Rectangle(10, 5, 0, 0, 1)
+
+    def test_to_csv_row(self):
+        """
+        Test the to_csv_row method of Rectangle.
+
+        This test case checks whether the to_csv_row method
+        correctly returns the CSV representation
+        of the Rectangle instance. It creates a Rectangle with id=1,
+        width=10, height=5, x=0, and y=0.
+        The expected CSV row string should be "1,10,0,0".
+        """
+        csv_row = self.r1.to_csv_row()
+        expected_row = "1,10,0,0"
+        self.assertEqual(csv_row, expected_row)
+
+    def test_from_csv_row(self):
+        """
+        Test the from_csv_row method of Rectangle.
+
+        This test case checks whether the from_csv_row method
+        correctly creates a new Rectangle instance
+        from the given CSV row string. It provides the CSV row
+        string "1,10,0,0" which should be parsed into
+        a new Rectangle instance with id=1, width=10, height=5,
+        x=0, and y=0. The new instance should be equal
+        to the original instance created in setUp.
+        """
+        csv_row = "1,10,0,0"
+        new_r1 = Rectangle.from_csv_row(csv_row)
+        self.assertEqual(self.r1.id, new_r1.id)
+        self.assertEqual(self.r1.width, new_r1.width)
+        self.assertEqual(self.r1.height, new_r1.height)
+        self.assertEqual(self.r1.x, new_r1.x)
+        self.assertEqual(self.r1.y, new_r1.y)
 
 if __name__ == '__main__':
     unittest.main()

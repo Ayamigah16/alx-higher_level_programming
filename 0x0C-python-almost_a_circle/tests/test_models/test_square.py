@@ -90,6 +90,42 @@ class TestSquare(unittest.TestCase):
         expected_dict = {'id': 5, 'size': 4, 'x': 2, 'y': 3}
         self.assertEqual(s1_dict, expected_dict)
 
+    def setUp(self):
+        # Create an instance of Square with id=1, size=5, x=0, and y=0
+        self.s1 = Square(5, 0, 0, 1)
+
+    def test_to_csv_row(self):
+        """
+        Test the to_csv_row method of Square.
+
+        This test case checks whether the to_csv_row method
+        correctly returns the CSV representation
+        of the Square instance. It creates a Square with id=1,
+        size=5, x=0, and y=0. The expected CSV row
+        string should be "1,5,0,0".
+        """
+        csv_row = self.s1.to_csv_row()
+        expected_row = "1,5,0,0"
+        self.assertEqual(csv_row, expected_row)
+
+    def test_from_csv_row(self):
+        """
+        Test the from_csv_row method of Square.
+
+        This test case checks whether the from_csv_row method
+        correctly creates a new Square instance
+        from the given CSV row string. It provides the CSV row
+        string "1,5,0,0" which should be parsed into
+        a new Square instance with id=1, size=5, x=0, and y=0.
+        The new instance should be equal to the original
+        instance created in setUp.
+        """
+        csv_row = "1,5,0,0"
+        new_s1 = Square.from_csv_row(csv_row)
+        self.assertEqual(self.s1.id, new_s1.id)
+        self.assertEqual(self.s1.size, new_s1.size)
+        self.assertEqual(self.s1.x, new_s1.x)
+        self.assertEqual(self.s1.y, new_s1.y)
 
 if __name__ == "__main__":
     unittest.main()
