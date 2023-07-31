@@ -72,3 +72,18 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """Update the square attributes."""
+        attrs = ['id', 'size', 'x', 'y']
+        if args:
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key in attrs:
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of a square."""
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
