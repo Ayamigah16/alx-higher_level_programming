@@ -1,0 +1,41 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo?")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Quonam modo?
+
+>>> text_indentation("Utrum igitur tibi litteram videor an totas paginas commovere?")
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+>>> text_indentation("Non autem hoc:")
+Non autem hoc:
+
+>>> text_indentation("igitur ne illud quidem.")
+igitur ne illud quidem.
+
+>>> text_indentation("Fortasse id optimum, sed ubi illud:")
+Fortasse id optimum, sed ubi illud:
+
+>>> text_indentation("Plus semper voluptatis?")
+Plus semper voluptatis?
+
+>>> text_indentation("Teneo, inquit, finem illi videri nihil dolere.")
+Teneo, inquit, finem illi videri nihil dolere.
+
+>>> text_indentation("Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.")
+Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+
+>>> text_indentation("Si id dicis, vicimus.")
+Si id dicis, vicimus.
+
+>>> text_indentation("Inde sermone vario sex illa a Dipylo stadia confecimus.")
+Inde sermone vario sex illa a Dipylo stadia confecimus.
+
+>>> text_indentation("Sin aliud quid voles, postea.")
+Sin aliud quid voles, postea.
+
+>>> text_indentation("Quae animi affectio suum cuique tribuens atque hanc, quam dico.")
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+
+>>> text_indentation("Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres")
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
