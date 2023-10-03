@@ -5,6 +5,7 @@ Rectangle Module
 
 import sys
 
+
 def is_safe(board, row, col):
     """Check if it's safe to place a queen at position (row, col) on the board.
 
