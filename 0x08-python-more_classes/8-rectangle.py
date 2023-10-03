@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Rectangle Module
+"""
+
+
 class Rectangle:
     """
     Rectangle class with width, height, and methods for calculations.
