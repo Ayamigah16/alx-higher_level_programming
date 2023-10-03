@@ -105,4 +105,5 @@ class Rectangle:
         Returns:
             str: The string representation of the Rectangle.
         """
-        return f"Rectangle({self.__width}, {self.__height})"
+        return "<{}.Rectangle object at {}>".format(
+        type(self).__name__, hex(id(self)))
