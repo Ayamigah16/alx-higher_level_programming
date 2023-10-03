@@ -106,4 +106,4 @@ class Rectangle:
             str: The string representation of the Rectangle.
         """
         return "<{}.Rectangle object at {}>".format(
-        type(self).__name__, hex(id(self)))
+            type(self).__name__, hex(id(self)))
