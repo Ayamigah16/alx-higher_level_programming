@@ -1,0 +1,5 @@
+python3 -c 'print(__import__("1-my_list").MyList)' | cat -e
+python3 -c 'print(__import__("1-my_list").MyList([]))' | cat -e
+python3 -c 'print(__import__("1-my_list").MyList([1, 4, 2, 3, 5]))' | cat -e
+python3 -c 'print(__import__("1-my_list").MyList([5, 4, 3, 2, 1]))' | cat -e
+python3 -c 'print(__import__("1-my_list").MyList(["hello", "world"]))' | cat -e
