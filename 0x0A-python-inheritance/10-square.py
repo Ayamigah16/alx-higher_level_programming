@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+a class Square that inherits from Rectangle (9-rectangle.py):
+"""
+
+
 Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """Represents a square with a side length."""
@@ -21,6 +27,7 @@ class Square(Rectangle):
             str: The string representation of the square.
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
+
 
 if __name__ == "__main__":
     s = Square(13)

@@ -37,6 +37,7 @@ class Rectangle(BaseGeometry):
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
+
 if __name__ == "__main__":
     r = Rectangle(1, 4)
     print(r)
