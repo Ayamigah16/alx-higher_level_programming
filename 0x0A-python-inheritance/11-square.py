@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-a class Square that inherits from Rectangle
-(9-rectangle.py). (task based on 10-square.py).
+ a class Square that inherits from Rectangle (9-rectangle.py).
+(task based on 10-square.py).
 """
 
 
@@ -18,7 +18,15 @@ class Square(Rectangle):
             size (int): The side length of the square.
         """
         self.integer_validator("size", size)
-        super().__init__(size, size)
+        self.__size = size
+
+    def area(self):
+        """Calculate the area of the square.
+
+        Returns:
+            int: The area of the square.
+        """
+        return self.__size ** 2
 
     def __str__(self):
         """Return a string representation of the square.
@@ -26,10 +34,10 @@ class Square(Rectangle):
         Returns:
             str: The string representation of the square.
         """
-        return "[Square] {}/{}".format(self.size, self.size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
 
 if __name__ == "__main__":
-    s = Square(781)
+    s = Square(13)
     print(s)
     print(s.area())
