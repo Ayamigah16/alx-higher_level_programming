@@ -20,6 +20,7 @@ class Rectangle(BaseGeometry):
         self.__width = self.integer_validator("width", width)
         self.__height = self.integer_validator("height", height)
 
+
 if __name__ == "__main__":
     r = Rectangle(3, 5)
     print(r)
