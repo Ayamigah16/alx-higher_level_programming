@@ -26,10 +26,10 @@ class Square(Rectangle):
         Returns:
             str: The string representation of the square.
         """
-        return "[Square] {}/{}".format(self.width, self.height)
+        return "[Square] {}/{}".format(self.size, self.size)
 
 
 if __name__ == "__main__":
-    s = Square(13)
+    s = Square(781)
     print(s)
     print(s.area())
