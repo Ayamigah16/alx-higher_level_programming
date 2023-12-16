@@ -13,7 +13,8 @@ Base = declarative_base()
 class State(Base):
     """Class representing the 'states' table in the database."""
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False, unique=True)
+    id = Column(Integer, primary_key=True,
+                nullable=False, unique=True)
     name = Column(String(256), nullable=False)
-    cities = relationship("City", backref="state",
+    cities = relationship('City', back_populates="state",
                           cascade="all, delete-orphan")
