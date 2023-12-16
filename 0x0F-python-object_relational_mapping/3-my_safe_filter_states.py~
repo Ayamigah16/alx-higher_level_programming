@@ -1,0 +1,55 @@
+#!/usr/bin/python3
+"""
+Module documentation: This script connects to a MySQL server and retrieves
+states from the 'states' table in the specified database based on user input.
+It is safe from SQL injection.
+"""
+
+import MySQLdb
+import sys
+
+def safe_filter_states_by_user_input(username, password, db_name, state_name):
+    """
+    Function documentation: Retrieves and prints states based on user input.
+    This function uses parameterized queries to prevent SQL injection.
+    Args:
+        username (str): MySQL username.
+        password (str): MySQL password.
+        db_name (str): Database name.
+        state_name (str): State name to search for.
+    """
+    # Connect to the database
+    conn = MySQLdb.connect(
+        host="localhost", port=3306,
+        user=username, passwd=password,
+        db=db_name, charset="utf8")
+    cur = conn.cursor()
+
+    # Execute the SQL query with user input using parameterized query
+    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
+    cur.execute(query, (state_name,))
+    # The second argument is a tuple of values
+
+    query_rows = cur.fetchall()
+
+    # Print the results
+    for row in query_rows:
+        print(row)
+
+    # Close the cursor and connection
+    cur.close()
+    conn.close()
+
+if __name__ == "__main__":
+    # Check if correct number of arguments is provided
+    if len(sys.argv) != 5:
+        print("Usage: {} <username> <password> <db_name> <state_name>".format(
+            sys.argv[0]))
+        sys.exit(1)
+
+    # Get arguments
+    username, password, db_name, state_name = (sys.argv[1], sys.argv[2],
+                                               sys.argv[3], sys.argv[4])
+
+    # Call the function to filter states by user input safely
+    safe_filter_states_by_user_input(username, password, db_name, state_name)
