@@ -7,16 +7,22 @@ states from the 'states' table in the specified database.
 import MySQLdb
 import sys
 
+
 def get_all_states(username, password, db_name):
     """
-    Function documentation: Retrieves and prints all states from the 'states' table.
+    Function documentation: Retrieves and prints all states
+    from the 'states' table.
+
     Args:
         username (str): MySQL username.
         password (str): MySQL password.
         db_name (str): Database name.
     """
     # Connect to the database
-    conn = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=db_name, charset="utf8")
+    conn = MySQLdb.connect(
+        host="localhost", port=3306,
+        user=username, passwd=password,
+        db=db_name, charset="utf8")
     cur = conn.cursor()
 
     # Execute the SQL query
@@ -30,6 +36,7 @@ def get_all_states(username, password, db_name):
     # Close the cursor and connection
     cur.close()
     conn.close()
+
 
 if __name__ == "__main__":
     # Check if correct number of arguments is provided
