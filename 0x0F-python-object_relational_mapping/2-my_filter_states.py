@@ -25,8 +25,8 @@ def filter_states_by_user_input(username, password, db_name, state_name):
     cur = conn.cursor()
 
     # Execute the SQL query with user input
-    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".
-    format(state_name)
+    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(
+        state_name)
     cur.execute(query)
     query_rows = cur.fetchall()
 
@@ -42,8 +42,8 @@ def filter_states_by_user_input(username, password, db_name, state_name):
 if __name__ == "__main__":
     # Check if correct number of arguments is provided
     if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <db_name> <state_name>".
-              format(sys.argv[0]))
+        print("Usage: {} <username> <password> <db_name> <state_name>".format(
+            sys.argv[0]))
         sys.exit(1)
 
     # Get arguments
