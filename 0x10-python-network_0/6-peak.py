@@ -27,6 +27,7 @@ def find_peak(list_of_integers):
 
     return list_of_integers[low]
 
+
 if __name__ == "__main__":
     # Additional test cases can be added here
     print(find_peak([1, 2, 4, 6, 3]))
