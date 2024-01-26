@@ -1,0 +1,17 @@
+// 6-square.js
+
+const Square5 = require('./5-square'); // Import the previous Square class
+
+class Square extends Square5 {
+  charPrint (c) {
+    // If c is undefined, use 'X' as the default character
+    const character = c || 'X';
+
+    // Print the square using the specified character
+    for (let i = 0; i < this.height; i++) {
+      console.log(character.repeat(this.width));
+    }
+  }
+}
+
+module.exports = Square;
