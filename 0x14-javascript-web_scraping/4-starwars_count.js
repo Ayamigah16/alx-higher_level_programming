@@ -10,6 +10,9 @@ const apiUrl = process.argv[2];
 // Character ID of Wedge Antilles
 const characterId = 18;
 
+// characterURL
+const characterURL = "https://swapi-api.alx-tools.com/api/people/"
+
 // Make a GET request to the API endpoint
 request.get(apiUrl, (error, response, body) => {
   // If an error occurred during the request, print the error object
@@ -23,7 +26,7 @@ request.get(apiUrl, (error, response, body) => {
 
   // Filter the films where Wedge Antilles is present
   const filmsWithWedge = filmsData.filter(film =>
-    film.characters.includes(`${apiUrl}${characterId}/`)
+    film.characters.includes(`${characterUrl}${characterId}/`)
   );
 
   // Print the number of films where Wedge Antilles is present
